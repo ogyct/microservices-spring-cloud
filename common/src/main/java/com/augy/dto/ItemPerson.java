@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class Item {
-    private String itemName;
-    private int count;
+@Builder()
+public class ItemPerson {
+    private Person person;
+    private Item item;
 }
-

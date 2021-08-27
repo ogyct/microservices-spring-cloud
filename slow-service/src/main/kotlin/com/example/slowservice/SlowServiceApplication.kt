@@ -26,12 +26,13 @@ class SlowController {
     @GetMapping("/random-person")
     fun slowPerson(): Mono<Person> {
         return Mono.just(Person(UUID.randomUUID().toString(), nextInt(0, 100)))
-                .delayElement(Duration.ofSeconds(0))
+            .delayElement(Duration.ofSeconds(3))
     }
 
     @GetMapping("/random-item")
     fun slowItem(): Mono<Item> {
         return Mono.just(Item(UUID.randomUUID().toString(), nextInt(0, 100)))
-                .delayElement(Duration.ofSeconds(1))
+            .delayElement(Duration.ofSeconds(3))
     }
+
 }
